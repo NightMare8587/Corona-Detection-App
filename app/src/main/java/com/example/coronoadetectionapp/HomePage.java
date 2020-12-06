@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -25,12 +26,14 @@ public class HomePage extends AppCompatActivity {
     FloatingActionButton picture;
     BottomNavigationView navigationView;
     ImageView imageView;
+    Button proceed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
+        proceed = (Button)findViewById(R.id.proceedToNext);
         picture = (FloatingActionButton)findViewById(R.id.fab);
         imageView = findViewById(R.id.image);
         navigationView = (BottomNavigationView)findViewById(R.id.bottomNavigationView);
@@ -82,6 +85,12 @@ public class HomePage extends AppCompatActivity {
         });
         builder.create();
         builder.show();
+        proceed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
     @Override
@@ -90,7 +99,7 @@ public class HomePage extends AppCompatActivity {
         switch (requestCode){
             case 1:
                 Uri uri = data.getData();
-                Picasso.get().load(uri).resize(600,600).into(imageView);
+                Picasso.get().load(uri).resize(800,800).into(imageView);
                 break;
             case 2:
                 Bundle extras = data.getExtras();
