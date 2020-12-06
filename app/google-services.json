@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "555719746739",
+    "project_id": "coronoa-detection-app",
+    "storage_bucket": "coronoa-detection-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555719746739:android:e0e92b700eef083b90bcc6",
+        "android_client_info": {
+          "package_name": "com.example.coronoadetectionapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "555719746739-66e6n5brv41epuuhris8ca3ad8502v4n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc_Tl_o820my9ffMvfNrYVkqp45f-OlwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "555719746739-66e6n5brv41epuuhris8ca3ad8502v4n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
