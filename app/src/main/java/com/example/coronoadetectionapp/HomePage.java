@@ -85,12 +85,7 @@ public class HomePage extends AppCompatActivity {
         });
         builder.create();
         builder.show();
-        proceed.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
     }
 
     @Override
