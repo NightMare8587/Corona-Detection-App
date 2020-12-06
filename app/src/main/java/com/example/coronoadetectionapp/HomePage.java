@@ -35,7 +35,7 @@ public class HomePage extends AppCompatActivity {
         picture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               
+
             }
         });
 
