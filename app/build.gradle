@@ -11,28 +11,35 @@ android {
 
     defaultConfig {
         applicationId "com.example.coronoadetectionapp"
-        sourceSets{
-            main{
-                python{
-                    srcDirs = ["src/main/python"]
-                }
+
+        sourceSets {
+            main {
+                python.srcDir "some/other/dir"
             }
         }
         minSdkVersion 23
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+//        python{
+//            buildPython "C:/Users/91807/Desktop/PulkitOOPS/Python/Python.exe"
+//      }
+        python{
+            pip{
+                install "numpy"
 
+                install "keras==2.2.1"
+            }
+        }
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
 
-        python{
-            buildPython "C:/Users/91807/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Python 3.9"
-        }
+
     }
+
 
     buildTypes {
         release {

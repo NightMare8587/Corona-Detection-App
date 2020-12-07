@@ -16,7 +16,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.chaquo.python.PyObject;
+import com.chaquo.python.Python;
+import com.chaquo.python.android.AndroidPlatform;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.squareup.picasso.Picasso;
@@ -27,14 +31,23 @@ public class HomePage extends AppCompatActivity {
     BottomNavigationView navigationView;
     ImageView imageView;
     Button proceed;
+    Python py;
+    PyObject obj;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+        if(!Python.isStarted()){
+            Python.start(new AndroidPlatform(this));
+        }
 
+        py = Python.getInstance();
+        obj = py.getModule("main");
         proceed = (Button)findViewById(R.id.proceedToNext);
         picture = (FloatingActionButton)findViewById(R.id.fab);
+        textView = (TextView)findViewById(R.id.textView2);
         imageView = findViewById(R.id.image);
         navigationView = (BottomNavigationView)findViewById(R.id.bottomNavigationView);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HomeFrag()).commit();
@@ -85,6 +98,15 @@ public class HomePage extends AppCompatActivity {
         });
         builder.create();
         builder.show();
+
+        proceed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PyObject obj = null;
+                obj.callAttr("main",imageView);
+
+            }
+        });
 
     }
 
