@@ -47,7 +47,7 @@ public class HomePage extends AppCompatActivity {
         obj = py.getModule("main");
         proceed = (Button)findViewById(R.id.proceedToNext);
         picture = (FloatingActionButton)findViewById(R.id.fab);
-        textView = (TextView)findViewById(R.id.textView2);
+        //textView = (TextView)findViewById(R.id.textView2);
         imageView = findViewById(R.id.image);
         navigationView = (BottomNavigationView)findViewById(R.id.bottomNavigationView);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HomeFrag()).commit();
